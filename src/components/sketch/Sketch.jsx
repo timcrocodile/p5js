@@ -10,7 +10,7 @@ export default function Sketch() {
       let canvas;
 
       p.setup = () => {
-        canvas = p.createCanvas(2000, 1000);
+        canvas = p.createCanvas(400, 400);
         // p.background(1122);
         p.background(560);
       };
