@@ -10,7 +10,8 @@ export default function Sketch() {
       let canvas;
 
       p.setup = () => {
-        canvas = p.createCanvas(400, 400);
+        // canvas = p.createCanvas(800, 800);
+        canvas = p.createCanvas(window.innerWidth, window.innerHeight);
         // p.background(1122);
         p.background(560);
       };
@@ -45,11 +46,14 @@ export default function Sketch() {
     };
   }, []);
 
+  const handleSaveCanvas = () => {
+    sketchRef.current.exportCanvas();
+  };
+
   return (
     <div className={styles.sketchContainer}>
-      <button onClick={() => sketchRef.current.exportCanvas()}>
-        Salva immagine
-      </button>
+      {/* <button onClick={() => sketchRef.current.exportCanvas()}> */}
+      <button onClick={handleSaveCanvas}>Salva immagine</button>
       <div ref={sketchRef}></div>
     </div>
   );
