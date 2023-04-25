@@ -53,7 +53,8 @@ export default function Sketch() {
   return (
     <div className={styles.sketchContainer}>
       {/* <button onClick={() => sketchRef.current.exportCanvas()}> */}
-      <button onClick={handleSaveCanvas}>Salva immagine</button>
+      <button onClick={handleSaveCanvas}>#PutYourStressInCanva</button>
+
       <div ref={sketchRef}></div>
     </div>
   );
