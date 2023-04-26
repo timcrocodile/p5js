@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import p5 from "p5";
 import styles from "./index.module.scss";
 
 export default function Sketch() {
   const sketchRef = useRef(null);
+  const [batteryLevel, setBatteryLevel] = useState(null);
 
   useEffect(() => {
     const sketch = new p5((p) => {
@@ -50,11 +51,23 @@ export default function Sketch() {
     sketchRef.current.exportCanvas();
   };
 
+  // navigator.getBattery().then(function (b) {
+  //   console.log(`Battery:${Math.round(b.level * 100)}%`);
+  // });
+
+  navigator.getBattery().then(function (b) {
+    setBatteryLevel(Math.round(b.level * 100));
+  });
+
   return (
     <div className={styles.sketchContainer}>
       {/* <button onClick={() => sketchRef.current.exportCanvas()}> */}
-      <button onClick={handleSaveCanvas}>#PutYourStressInCanva</button>
-
+      <div className={styles.navbar}>
+        <button onClick={handleSaveCanvas}>#PutYourStressInCanva</button>
+        {batteryLevel !== null && (
+          <p>Your Device Battery level: {batteryLevel}%</p>
+        )}
+      </div>
       <div ref={sketchRef}></div>
     </div>
   );
