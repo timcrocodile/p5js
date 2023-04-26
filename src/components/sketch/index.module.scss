@@ -35,10 +35,10 @@
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     cursor: pointer;
     transition: all 0.5s;
+    // &:hover {
+    //   transform: scale(1.08);
+    // }
     &:hover {
-      transform: scale(1.08);
-    }
-    &:active {
       transform: scale(1.25);
       background: rgb(131, 58, 180);
       background: linear-gradient(
