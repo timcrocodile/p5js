@@ -67,6 +67,15 @@ export default function Sketch() {
         {batteryLevel !== null && (
           <p>Your Device Battery level: {batteryLevel}%</p>
         )}
+        <iframe
+          width="200"
+          height="100"
+          src="https://www.youtube.com/embed/WJ3-F02-F_Y"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
       </div>
       <div ref={sketchRef}></div>
     </div>
