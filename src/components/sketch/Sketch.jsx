@@ -64,9 +64,9 @@ export default function Sketch() {
       {/* <button onClick={() => sketchRef.current.exportCanvas()}> */}
       <div className={styles.navbar}>
         <button onClick={handleSaveCanvas}>#PutYourStressInCanva</button>
-        {batteryLevel !== null && (
+        {/* {batteryLevel !== null && (
           <p>Your Device Battery level: {batteryLevel}%</p>
-        )}
+        )} */}
         <iframe
           width="200"
           height="100"
